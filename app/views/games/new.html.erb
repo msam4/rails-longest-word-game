@@ -1,0 +1,9 @@
+<h1>Longest Word Game</h1>
+<p>Create a word using the ten random letters below:</p>
+<%= @letters %>
+<form action="/score" method="post" data-turbo="false">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :grid, @letters %>
+  <input type="text" class="form-control" name="letters" placeholder="Type out a word!">
+  <input type="submit" class="btn btn-primary" value="Play!">
+</form>
